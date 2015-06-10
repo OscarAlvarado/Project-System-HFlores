@@ -5,6 +5,13 @@
  */
 package vista;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Label;
+import javax.swing.JDesktopPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Eduardo
@@ -27,34 +34,106 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        DskMain = new javax.swing.JDesktopPane();
+        jXTaskPaneContainer1 = new org.jdesktop.swingx.JXTaskPaneContainer();
+        jXTaskPane1 = new org.jdesktop.swingx.JXTaskPane();
+        btn1 = new javax.swing.JButton();
+        jXTaskPane2 = new org.jdesktop.swingx.JXTaskPane();
+        jXTaskPane3 = new org.jdesktop.swingx.JXTaskPane();
+        jXTaskPane4 = new org.jdesktop.swingx.JXTaskPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
+        javax.swing.GroupLayout DskMainLayout = new javax.swing.GroupLayout(DskMain);
+        DskMain.setLayout(DskMainLayout);
+        DskMainLayout.setHorizontalGroup(
+            DskMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 622, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 453, Short.MAX_VALUE)
+        DskMainLayout.setVerticalGroup(
+            DskMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 432, Short.MAX_VALUE)
         );
+
+        jXTaskPaneContainer1.setBackground(new java.awt.Color(204, 204, 255));
+
+        jXTaskPane1.setTitle("Servicios habitación");
+
+        btn1.setText("jButton1");
+        btn1.setActionCommand("btn1");
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
+        jXTaskPane1.getContentPane().add(btn1);
+
+        jXTaskPaneContainer1.add(jXTaskPane1);
+
+        jXTaskPane2.setTitle("Almacen");
+        jXTaskPaneContainer1.add(jXTaskPane2);
+
+        jXTaskPane3.setTitle("Reportes");
+        jXTaskPaneContainer1.add(jXTaskPane3);
+
+        jXTaskPane4.setTitle("Configuracion");
+        jXTaskPaneContainer1.add(jXTaskPane4);
+
+        jMenu1.setText("Archivo");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Herramientas");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Ayuda");
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DskMain))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(DskMain)
+            .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+       /*ScreenHabitaciones sh = new ScreenHabitaciones(); 
+       sh.getContentPane().setPreferredSize(new Dimension(500,500));
+       JPanel p = new JPanel(new FlowLayout());
+       p.setOpaque(true); 
+       p.setBackground(Color.red);
+        
+       sh.add(p);
+       sh.add(new Label("holaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+       sh.pack();
+       
+       this.DskMain = new JDesktopPane();
+       this.getContentPane().add(DskMain);
+       DskMain.add(sh);
+       
+       sh.show();
+       this.pack();*/
+    }//GEN-LAST:event_btn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,6 +171,17 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
+    public javax.swing.JDesktopPane DskMain;
+    public javax.swing.JButton btn1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private org.jdesktop.swingx.JXTaskPane jXTaskPane1;
+    private org.jdesktop.swingx.JXTaskPane jXTaskPane2;
+    private org.jdesktop.swingx.JXTaskPane jXTaskPane3;
+    private org.jdesktop.swingx.JXTaskPane jXTaskPane4;
+    private org.jdesktop.swingx.JXTaskPaneContainer jXTaskPaneContainer1;
     // End of variables declaration//GEN-END:variables
 }
