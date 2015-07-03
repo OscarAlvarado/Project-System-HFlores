@@ -14,7 +14,7 @@ public class CtrlScreenHabitaciones {
         itemHabitacion item_1;  
         
         this.formScreen.setLayout(new BorderLayout());
-        this.formScreen.setBounds(0,0, 850, 500);
+        this.formScreen.setBounds(90,90, 850, 500);
         
                
         
@@ -33,6 +33,7 @@ public class CtrlScreenHabitaciones {
         scroll.setBorder(null);
 
         this.formScreen.add(scroll,BorderLayout.CENTER);
+        
         this.formScreen.setVisible(true);
         
     }

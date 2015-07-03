@@ -9,4 +9,8 @@ public class TipoHabitacionLogica {
         TipoHabitacionDAO tipHab = new TipoHabitacionDAO();
         return tipHab.listarTiposHab();
     }
+    public int registrarTipoHabitacion(TipoHabitacion tiphab){
+        TipoHabitacionDAO tipHab = new TipoHabitacionDAO();
+        return tipHab.registrarTipoHabitacion(tiphab);
+    }
 }

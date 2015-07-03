@@ -28,6 +28,7 @@ public class CtrlMain implements ActionListener{
         this.formMain = form;
         //formMain.btn1.addActionListener(this);
         
+        
         ScreenHabitaciones formHab = new ScreenHabitaciones();
         CtrlScreenHabitaciones ctrlHab = new CtrlScreenHabitaciones(formHab);        
         formMain.DskMain.add(ctrlHab.showForm());
@@ -35,6 +36,8 @@ public class CtrlMain implements ActionListener{
     }
   
     public void show(){        
+        formMain.setTitle("Sistema de Control Hotel - ***Hotel Flores***");
+        formMain.setExtendedState(formMain.MAXIMIZED_BOTH);
         formMain.setVisible(true);        
     }
     

@@ -3,19 +3,20 @@ package Controlador;
 import Logica.TipoHabitacionLogica;
 import Modelo.Controles.ModelComboTipoHabitacion;
 import Modelo.TipoHabitacion;
-import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Window;
 import java.util.List;
+import javax.swing.JFrame;
 import vista.JRegistroHabitacion;
 
-public class CtrlRegistroHabitacion {
+public class CtrlRegistroHabitacion implements ActionListener{
     JRegistroHabitacion formRegHab;
     TipoHabitacionLogica tipHabLog;
     
     public CtrlRegistroHabitacion() {
         this.formRegHab = new JRegistroHabitacion();
-        tipHabLog = new TipoHabitacionLogica();
-                
-        this.formRegHab.setVisible(true);
+        tipHabLog = new TipoHabitacionLogica();               
         listarCategorias();
     }
     
@@ -27,7 +28,22 @@ public class CtrlRegistroHabitacion {
     }
     
     
-    public JRegistroHabitacion showForm(){
+    public JRegistroHabitacion showForm(){        
+        formRegHab.btnAddTipoHab.addActionListener(this);        
+        this.formRegHab.moveToFront();
+        this.formRegHab.show();
+        //this.formRegHab.setVisible(true);
+        
         return formRegHab;
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getActionCommand().equals("addTipoHab")){
+            CtrlRegitroTipoHabitacion ctrlTipoHab = new CtrlRegitroTipoHabitacion();
+            ctrlTipoHab.showForm();
+        }
+    }
+    
+    
 }
