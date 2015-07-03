@@ -5,12 +5,6 @@
  */
 package vista;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Label;
-import javax.swing.JDesktopPane;
-import javax.swing.JPanel;
 
 /**
  *
@@ -34,20 +28,22 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
         DskMain = new javax.swing.JDesktopPane();
-        jXTaskPaneContainer1 = new org.jdesktop.swingx.JXTaskPaneContainer();
-        jXTaskPane1 = new org.jdesktop.swingx.JXTaskPane();
-        btn1 = new javax.swing.JButton();
-        jXTaskPane2 = new org.jdesktop.swingx.JXTaskPane();
-        jXTaskPane3 = new org.jdesktop.swingx.JXTaskPane();
-        jXTaskPane4 = new org.jdesktop.swingx.JXTaskPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        pnlTab = new javax.swing.JPanel();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jMenu7 = new javax.swing.JMenu();
 
-        jMenuItem1.setText("jMenuItem1");
+        jMenu4.setText("File");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("Edit");
+        jMenuBar2.add(jMenu5);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,85 +51,49 @@ public class Main extends javax.swing.JFrame {
         DskMain.setLayout(DskMainLayout);
         DskMainLayout.setHorizontalGroup(
             DskMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 622, Short.MAX_VALUE)
+            .addGap(0, 839, Short.MAX_VALUE)
         );
         DskMainLayout.setVerticalGroup(
             DskMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 432, Short.MAX_VALUE)
         );
 
-        jXTaskPaneContainer1.setBackground(new java.awt.Color(204, 204, 255));
+        pnlTab.setLayout(new java.awt.BorderLayout());
 
-        jXTaskPane1.setTitle("Servicios habitación");
+        jMenu6.setText("File");
 
-        btn1.setText("jButton1");
-        btn1.setActionCommand("btn1");
-        btn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
-            }
-        });
-        jXTaskPane1.getContentPane().add(btn1);
+        jMenuItem2.setText("jMenuItem2");
+        jMenu6.add(jMenuItem2);
 
-        jXTaskPaneContainer1.add(jXTaskPane1);
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+        jMenu6.add(jCheckBoxMenuItem1);
 
-        jXTaskPane2.setTitle("Almacen");
-        jXTaskPaneContainer1.add(jXTaskPane2);
+        jMenuBar3.add(jMenu6);
 
-        jXTaskPane3.setTitle("Reportes");
-        jXTaskPaneContainer1.add(jXTaskPane3);
+        jMenu7.setText("Edit");
+        jMenuBar3.add(jMenu7);
 
-        jXTaskPane4.setTitle("Configuracion");
-        jXTaskPaneContainer1.add(jXTaskPane4);
-
-        jMenu1.setText("Archivo");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Herramientas");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Ayuda");
-        jMenuBar1.add(jMenu3);
-
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMenuBar3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlTab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DskMain))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(DskMain)
-            .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+            .addComponent(pnlTab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-       /*ScreenHabitaciones sh = new ScreenHabitaciones(); 
-       sh.getContentPane().setPreferredSize(new Dimension(500,500));
-       JPanel p = new JPanel(new FlowLayout());
-       p.setOpaque(true); 
-       p.setBackground(Color.red);
-        
-       sh.add(p);
-       sh.add(new Label("holaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
-       sh.pack();
-       
-       this.DskMain = new JDesktopPane();
-       this.getContentPane().add(DskMain);
-       DskMain.add(sh);
-       
-       sh.show();
-       this.pack();*/
-    }//GEN-LAST:event_btn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,22 +104,13 @@ public class Main extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        
+
+//        try {
+//            UIManager.setLookAndFeel(new SyntheticaAluOxideLookAndFeel());          
+//        } catch (ParseException | UnsupportedLookAndFeelException e){
+//            System.out.println(e.getMessage());
+//        }
         //</editor-fold>
 
         /* Create and display the form */
@@ -172,16 +123,14 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JDesktopPane DskMain;
-    public javax.swing.JButton btn1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private org.jdesktop.swingx.JXTaskPane jXTaskPane1;
-    private org.jdesktop.swingx.JXTaskPane jXTaskPane2;
-    private org.jdesktop.swingx.JXTaskPane jXTaskPane3;
-    private org.jdesktop.swingx.JXTaskPane jXTaskPane4;
-    private org.jdesktop.swingx.JXTaskPaneContainer jXTaskPaneContainer1;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuItem jMenuItem2;
+    public javax.swing.JPanel pnlTab;
     // End of variables declaration//GEN-END:variables
 }
