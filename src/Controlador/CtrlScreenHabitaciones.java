@@ -34,8 +34,8 @@ public class CtrlScreenHabitaciones {
 
         this.formScreen.add(scroll,BorderLayout.CENTER);
         
-        this.formScreen.setVisible(true);
-        
+        //this.formScreen.setVisible(true);
+        //this.formScreen.show();
     }
     
     public ScreenHabitaciones showForm(){

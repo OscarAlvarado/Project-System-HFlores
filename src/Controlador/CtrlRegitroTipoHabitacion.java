@@ -4,23 +4,26 @@ import Logica.TipoHabitacionLogica;
 import Modelo.TipoHabitacion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JOptionPane;
 import vista.JRegistroTipoHabitacion;
-import vista.Main;
+
 
 public class CtrlRegitroTipoHabitacion implements ActionListener{
      
     JRegistroTipoHabitacion formTipoHab = null;
+    CtrlRegistroHabitacion ctrlregHab = null;
     TipoHabitacionLogica tipHabLog = null;
     TipoHabitacion tipHab;
-    public CtrlRegitroTipoHabitacion() {
+    public CtrlRegitroTipoHabitacion(CtrlRegistroHabitacion ctrl) {
         formTipoHab = new JRegistroTipoHabitacion();
         tipHabLog = new TipoHabitacionLogica();               
-        
+        ctrlregHab = ctrl;
     }
-    public void showForm(){
+    public JRegistroTipoHabitacion showForm(){
         formTipoHab.btnGuardar.addActionListener(this);        
-        formTipoHab.setVisible(true);
+        formTipoHab.show();
+        return formTipoHab;
     }
     
     @Override
@@ -33,6 +36,8 @@ public class CtrlRegitroTipoHabitacion implements ActionListener{
             
             if(rspta == 1){
                 JOptionPane.showMessageDialog(null, "Registro Realizado con Exito","Registro Tipo Habitacion",JOptionPane.INFORMATION_MESSAGE);
+                ctrlregHab.listarCategorias();
+                formTipoHab.dispose();
             }else{
                 JOptionPane.showMessageDialog(null, "Ocurrio un error al Registrar","Registro Tipo Habitacion",JOptionPane.ERROR_MESSAGE);
             }

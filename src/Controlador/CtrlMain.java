@@ -32,6 +32,7 @@ public class CtrlMain implements ActionListener{
         ScreenHabitaciones formHab = new ScreenHabitaciones();
         CtrlScreenHabitaciones ctrlHab = new CtrlScreenHabitaciones(formHab);        
         formMain.DskMain.add(ctrlHab.showForm());
+        ctrlHab.showForm().show();
         addTabPanel();
     }
   
@@ -94,8 +95,9 @@ public class CtrlMain implements ActionListener{
  
         if(e.getActionCommand().equals("btnRegHab")){
              
-            CtrlRegistroHabitacion ctrlTipHab = new CtrlRegistroHabitacion();
-            formMain.DskMain.add(ctrlTipHab.showForm());
+            CtrlRegistroHabitacion ctrlRegHab = new CtrlRegistroHabitacion(formMain.DskMain);
+            formMain.DskMain.add(ctrlRegHab.showForm());
+            //ctrlRegHab.showForm().show();
         }
     }
 }
