@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/USS%20Ing%20Sistemas/IV%20V%20VI%20Ciclo/Programacion%20Avanzada/Hotel_Flores_System/Hotel_Flores_System/src/Controlador/CtrlMain.java</file>
-            <file>file:/D:/USS%20Ing%20Sistemas/IV%20V%20VI%20Ciclo/Programacion%20Avanzada/Hotel_Flores_System/Hotel_Flores_System/src/vista/JRegistroHabitacion.java</file>
-            <file>file:/D:/USS%20Ing%20Sistemas/IV%20V%20VI%20Ciclo/Programacion%20Avanzada/Hotel_Flores_System/Hotel_Flores_System/src/Controlador/CtrlRegistroHabitacion.java</file>
-            <file>file:/D:/USS%20Ing%20Sistemas/IV%20V%20VI%20Ciclo/Programacion%20Avanzada/Hotel_Flores_System/Hotel_Flores_System/src/DAO/TipoHabitacionDAO.java</file>
-            <file>file:/D:/USS%20Ing%20Sistemas/IV%20V%20VI%20Ciclo/Programacion%20Avanzada/Hotel_Flores_System/Hotel_Flores_System/src/Controlador/CtrlRegitroTipoHabitacion.java</file>
+            <file>file:/C:/github_porjects/Hotel_Flores_System/Hotel_Flores_System/src/Controlador/CtrlRegistroHabitacion.java</file>
+            <file>file:/C:/github_porjects/Hotel_Flores_System/Hotel_Flores_System/src/Modelo/Habitacion.java</file>
+            <file>file:/C:/github_porjects/Hotel_Flores_System/Hotel_Flores_System/src/Logica/HabitacionLogica.java</file>
+            <file>file:/C:/github_porjects/Hotel_Flores_System/Hotel_Flores_System/src/vista/JRegistroHabitacion.java</file>
+            <file>file:/C:/github_porjects/Hotel_Flores_System/Hotel_Flores_System/src/Controlador/CtrlRegitroTipoHabitacion.java</file>
+            <file>file:/C:/github_porjects/Hotel_Flores_System/Hotel_Flores_System/src/DAO/HabitacionDAO.java</file>
         </group>
     </open-files>
 </project-private>

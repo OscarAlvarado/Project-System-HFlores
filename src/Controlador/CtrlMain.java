@@ -20,19 +20,12 @@ public class CtrlMain implements ActionListener{
     Main formMain;
     
     public CtrlMain(Main form) {
-//        try {
-//            UIManager.setLookAndFeel(new SyntheticaAluOxideLookAndFeel());          
-//        } catch (ParseException | UnsupportedLookAndFeelException e){
-//            System.out.println(e.getMessage());
-//        }
-        this.formMain = form;
-        //formMain.btn1.addActionListener(this);
-        
+
+        this.formMain = form;        
         
         ScreenHabitaciones formHab = new ScreenHabitaciones();
-        CtrlScreenHabitaciones ctrlHab = new CtrlScreenHabitaciones(formHab);        
-        formMain.DskMain.add(ctrlHab.showForm());
-        ctrlHab.showForm().show();
+        CtrlScreenHabitaciones ctrlScreenHab = new CtrlScreenHabitaciones(formHab,formMain.DskMain);        
+        ctrlScreenHab.showForm();  
         addTabPanel();
     }
   
@@ -96,8 +89,7 @@ public class CtrlMain implements ActionListener{
         if(e.getActionCommand().equals("btnRegHab")){
              
             CtrlRegistroHabitacion ctrlRegHab = new CtrlRegistroHabitacion(formMain.DskMain);
-            formMain.DskMain.add(ctrlRegHab.showForm());
-            //ctrlRegHab.showForm().show();
+            ctrlRegHab.showForm();            
         }
     }
 }

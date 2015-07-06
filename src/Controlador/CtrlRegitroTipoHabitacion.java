@@ -4,6 +4,7 @@ import Logica.TipoHabitacionLogica;
 import Modelo.TipoHabitacion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JDesktopPane;
 
 import javax.swing.JOptionPane;
 import vista.JRegistroTipoHabitacion;
@@ -15,15 +16,21 @@ public class CtrlRegitroTipoHabitacion implements ActionListener{
     CtrlRegistroHabitacion ctrlregHab = null;
     TipoHabitacionLogica tipHabLog = null;
     TipoHabitacion tipHab;
-    public CtrlRegitroTipoHabitacion(CtrlRegistroHabitacion ctrl) {
+    JDesktopPane panelMain;
+    
+    
+    public CtrlRegitroTipoHabitacion(CtrlRegistroHabitacion ctrl, JDesktopPane panel) {
         formTipoHab = new JRegistroTipoHabitacion();
         tipHabLog = new TipoHabitacionLogica();               
         ctrlregHab = ctrl;
+        panelMain = panel;
     }
-    public JRegistroTipoHabitacion showForm(){
-        formTipoHab.btnGuardar.addActionListener(this);        
+    
+    public void showForm(){
+        formTipoHab.btnGuardar.addActionListener(this);   
+        panelMain.add(formTipoHab);
         formTipoHab.show();
-        return formTipoHab;
+        //return formTipoHab;
     }
     
     @Override

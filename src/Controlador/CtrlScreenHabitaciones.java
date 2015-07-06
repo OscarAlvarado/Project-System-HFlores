@@ -1,6 +1,7 @@
 package Controlador;
 
 import java.awt.BorderLayout;
+import javax.swing.JDesktopPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import vista.ScreenHabitaciones;
@@ -9,8 +10,11 @@ import vista.itemHabitacion;
 public class CtrlScreenHabitaciones {
 
     ScreenHabitaciones formScreen = new ScreenHabitaciones();
-    public CtrlScreenHabitaciones(ScreenHabitaciones form) {
+    JDesktopPane deskMain;
+    
+    public CtrlScreenHabitaciones(ScreenHabitaciones form, JDesktopPane panel) {
         this.formScreen = form;  
+        this.deskMain = panel;
         itemHabitacion item_1;  
         
         this.formScreen.setLayout(new BorderLayout());
@@ -34,12 +38,12 @@ public class CtrlScreenHabitaciones {
 
         this.formScreen.add(scroll,BorderLayout.CENTER);
         
-        //this.formScreen.setVisible(true);
-        //this.formScreen.show();
+       
     }
     
-    public ScreenHabitaciones showForm(){
-        return formScreen;
+    public void showForm(){       
+        deskMain.add(formScreen);
+        this.formScreen.show();        
     }
    
     
