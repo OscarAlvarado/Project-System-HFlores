@@ -115,6 +115,63 @@ public class HabitacionDAO {
         return listHab;
     }
     
+    
+    public List<Habitacion> ListarHabitaciones_Item(){
+        List<Habitacion> listHab = null;
+        
+        Connection con = null;
+        CallableStatement cls = null;
+        ResultSet rs = null;
+        
+        try {
+            con = Connection_db.getConnetion();
+            cls = con.prepareCall("{Call sp_Listar_Habitaciones_Item()}");            
+            rs = cls.executeQuery();
+            
+            listHab = new ArrayList<>();
+            Habitacion hab = null;
+            TipoHabitacion tipoH = null;
+            while(rs.next()){
+                hab = new Habitacion();
+                hab.setIdHabitacion(rs.getInt(1));
+                
+                tipoH = new TipoHabitacion();
+                tipoH.setCategoria(rs.getString(2));                
+                hab.setTipHab(tipoH);
+                
+                hab.setNumero(rs.getString(3));
+                hab.setPiso(rs.getInt(4));
+                hab.setPrecio(rs.getDouble(5));
+                hab.setBaño(rs.getString(6));
+                hab.setTerma(rs.getString(7));
+                hab.setMedidas(rs.getString(8));
+                hab.setTv(rs.getString(9));
+                hab.setEstado(rs.getInt(10));
+                listHab.add(hab);
+            }
+            
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }finally {
+            try {
+                //cerrando el preparedstatement y resultset
+                if (rs != null) {
+                    rs.close();
+                }
+                if (cls != null) {
+                    cls.close();
+                }
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        
+        return listHab;
+    }
+    
+    
     public int registroHabitacion(Habitacion hab){
         Connection con = null;
         CallableStatement cls = null;

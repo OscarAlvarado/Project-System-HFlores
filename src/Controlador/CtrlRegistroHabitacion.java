@@ -9,12 +9,15 @@ import Modelo.Habitacion;
 import Modelo.TipoHabitacion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.List;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import vista.JRegistroHabitacion;
 
-public class CtrlRegistroHabitacion implements ActionListener{
+public class CtrlRegistroHabitacion implements ActionListener, MouseListener{
     JRegistroHabitacion formRegHab;
     TipoHabitacionLogica tipHabLog;
     HabitacionLogica habLog;
@@ -42,6 +45,8 @@ public class CtrlRegistroHabitacion implements ActionListener{
         List<TipoHabitacion> listTable = tipHabLog.listarTiposHab();
         Modelo.Controles.ModeloTablaTipoHabitacion ModelTable = new ModeloTablaTipoHabitacion(listTable);
         formRegHab.tblTipHab.setModel(ModelTable);
+        
+        formRegHab.tblTipHab.addMouseListener(this);
     }
     
     public void listarHabitaciones(){
@@ -92,13 +97,50 @@ public class CtrlRegistroHabitacion implements ActionListener{
             }else if(rspta == 1){
                 JOptionPane.showMessageDialog(null, "Registro Realizado con Exito","Registro Habitacion",JOptionPane.INFORMATION_MESSAGE);
                 //llamar a lista en tabla habitaciones
-                
+                listarHabitaciones();
             }else{
                 JOptionPane.showMessageDialog(null, "Error de Registro","Registro Habitacion",JOptionPane.ERROR_MESSAGE);
             }
             
             
         }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent me) {
+        
+        if(me.getSource().equals(formRegHab.tblTipHab)){
+           
+            int fila = formRegHab.tblTipHab.getSelectedRow();
+            TipoHabitacion idTipHab = new TipoHabitacion();
+            idTipHab.setIdTipoHabitacion(Integer.parseInt(formRegHab.tblTipHab.getValueAt(fila,0).toString()));
+            
+            formRegHab.tblListHab.removeAll();
+            formRegHab.tblListHab.setModel(new DefaultTableModel());
+            List<Habitacion> listHab = habLog.ListarHabitacion_xTipo(idTipHab);
+            Modelo.Controles.ModeloTablaHabitaciones modelTabla = new ModeloTablaHabitaciones(listHab);            
+            formRegHab.tblListHab.setModel(modelTabla);
+        }
+    }
+    
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
     }
     
     

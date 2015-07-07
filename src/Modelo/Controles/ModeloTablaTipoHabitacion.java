@@ -7,7 +7,7 @@ import javax.swing.table.AbstractTableModel;
 public class ModeloTablaTipoHabitacion extends AbstractTableModel{
 
     List<TipoHabitacion> listTipoHab = null;
-    String column[] = {"Tipo"};
+    String column[] = {"ID","Tipo"};
     public ModeloTablaTipoHabitacion(List<TipoHabitacion> list) {
         this.listTipoHab = list;        
     }
@@ -27,6 +27,9 @@ public class ModeloTablaTipoHabitacion extends AbstractTableModel{
         String valor="";
         
         if(columnIndex == 0){
+            valor = String.valueOf(listTipoHab.get(rowIndex).getIdTipoHabitacion());
+        }
+        if(columnIndex == 1){
             valor = String.valueOf(listTipoHab.get(rowIndex).getCategoria());
         }
         return valor;
@@ -34,5 +37,6 @@ public class ModeloTablaTipoHabitacion extends AbstractTableModel{
     @Override
     public String getColumnName(int i){
         return column[i];
-    }
+    }   
+    
 }

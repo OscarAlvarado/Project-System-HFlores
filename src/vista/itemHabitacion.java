@@ -55,7 +55,7 @@ public class itemHabitacion extends JPanel implements ActionListener{
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/spanner.png"))); // NOI18N
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Habitacion");
         
