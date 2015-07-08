@@ -62,11 +62,18 @@ public class CtrlMain implements ActionListener{
         btnListHabitacion.addActionListener(this);
         
         
+        
+        
         panelHab.setLayout(new BoxLayout(panelHab, BoxLayout.Y_AXIS));
         panelHab.add(btnRegHabitacion);
         panelHab.add(btnListHabitacion);
         
         JPanel panelAlm = new JPanel();
+        JButton btnRegProducto = new JButton("Registro Producto");
+        btnRegProducto.setActionCommand("btnRegProd");
+        btnRegProducto.addActionListener(this);
+        panelAlm.add(btnRegProducto);
+        
         JPanel panelRep = new JPanel();
         
 
@@ -148,6 +155,12 @@ public class CtrlMain implements ActionListener{
             Ctrl_RegTipoDoc ctrlRTD = new Ctrl_RegTipoDoc(formTD,formMain.DskMain);
             ctrlRTD.runner();
         }
+         if(e.getActionCommand().equals("btnRegProd")){
+             
+            CtrlRegistroProducto ctrlRegprod = new CtrlRegistroProducto(formMain.DskMain);
+            ctrlRegprod.showForm();            
+        }
+        
         if (e.getActionCommand().equalsIgnoreCase("RepProducto"))
          {
            Reporte reProd = new Reporte();

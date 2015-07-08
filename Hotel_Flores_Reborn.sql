@@ -334,6 +334,9 @@ insert into tipohabitacion values(default,'Normal','habitacion normal'),(default
 
 
 
+
+
+
 INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('galletas oreo', '0.60', '50', '2016-12-12');
 INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('gaseosa Inka Cola', '1.50', '20', '2016-06-07');
 INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('kolino', '4.00', '30', '2015-07-04');
@@ -344,3 +347,95 @@ INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Canti
 INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('Desodorante Rexona', '1.00', '60', '2016-7-27');
 INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('Tijeras', '2.00', '20', '2017-12-12');
 INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('gaseosa Pepsi', '2.00', '20', '2016-06-07');
+
+
+/*Insercion de DATOS  --- TIPO DOCUMENTO  */
+
+INSERT INTO `hotel_flores_system`.`tipodocumento` (`nombreDoc`) VALUES ('DNI');
+INSERT INTO `hotel_flores_system`.`tipodocumento` (`nombreDoc`) VALUES ('CI');
+INSERT INTO `hotel_flores_system`.`tipodocumento` (`nombreDoc`) VALUES ('RG');
+INSERT INTO `hotel_flores_system`.`tipodocumento` (`nombreDoc`) VALUES ('CC');
+INSERT INTO `hotel_flores_system`.`tipodocumento` (`nombreDoc`) VALUES ('DUI');
+INSERT INTO `hotel_flores_system`.`tipodocumento` (`nombreDoc`) VALUES ('DPI');
+INSERT INTO `hotel_flores_system`.`tipodocumento` (`nombreDoc`) VALUES ('CURP');
+INSERT INTO `hotel_flores_system`.`tipodocumento` (`nombreDoc`) VALUES ('CIE');
+
+/*Insercion de DATOS  --- PERSONA  */
+
+INSERT INTO `hotel_flores_system`.`persona` (`Nombres`, `Apellido_Paterno`, `Apellido_Materno`, `direccion`, `correo`, `numerodoc`, `idTipoDoc`) VALUES ('Juan', 'Ramirez', 'Olazabal', 'Santa Teresa 123', 'juancitoR@hotmail.com', '24553176', '2');
+INSERT INTO `hotel_flores_system`.`persona` (`Nombres`, `Apellido_Paterno`, `Apellido_Materno`, `direccion`, `numerodoc`, `idTipoDoc`) VALUES ('Ana', 'Montero', 'Silva', 'Bolognesi 345', '345434', '5');
+INSERT INTO `hotel_flores_system`.`persona` (`Nombres`, `Apellido_Paterno`, `Apellido_Materno`, `direccion`, `correo`, `numerodoc`, `idTipoDoc`) VALUES ('Teresa', 'Panta', 'Flores', 'Cristobal Acshi 654', 'TerPanFl@gmail.com', '76567897', '1');
+INSERT INTO `hotel_flores_system`.`persona` (`Nombres`, `Apellido_Paterno`, `Apellido_Materno`, `direccion`, `correo`, `numerodoc`, `idTipoDoc`) VALUES ('Pablo', 'Monja', 'Sandoval', 'B.Leguia 235', 'pablojadal@gmail.com', '5456765', '6');
+INSERT INTO `hotel_flores_system`.`persona` (`Nombres`, `Apellido_Paterno`, `Apellido_Materno`, `direccion`, `correo`, `numerodoc`, `idTipoDoc`) VALUES ('Pedro', 'Cieza', 'Mesta', 'Av. Tacna 543', 'sagitario2000@hotmail.com', '55456256', '1');
+INSERT INTO `hotel_flores_system`.`persona` (`Nombres`, `Apellido_Paterno`, `Apellido_Materno`, `direccion`, `correo`, `numerodoc`, `idTipoDoc`) VALUES ('Nicolas', 'Cajo', 'Siesquen', 'Francisco Bolognesi 105', 'nikicajo29@gmail.com', '56735536', '1');
+INSERT INTO `hotel_flores_system`.`persona` (`Nombres`, `Apellido_Paterno`, `Apellido_Materno`, `direccion`, `correo`, `numerodoc`, `idTipoDoc`) VALUES ('Rosa', 'Vasquez', 'Parraguez', 'Santa Rosa 243', 'sparraguez@hotmail.com', '66347637', '3');
+INSERT INTO `hotel_flores_system`.`persona` (`Nombres`, `Apellido_Paterno`, `Apellido_Materno`, `direccion`, `correo`, `numerodoc`, `idTipoDoc`) VALUES ('Jairo', 'Sevilla', 'Millones', 'Alfonso Ugarte 657', 'SevillaM@gmail.com', '5647647', '7');
+INSERT INTO `hotel_flores_system`.`persona` (`Nombres`, `Apellido_Paterno`, `Apellido_Materno`, `direccion`, `correo`, `numerodoc`, `idTipoDoc`) VALUES ('Ana', 'Jaramillo', 'Cruz', 'Nicanor Carmona 766', 'AnitaJC@hotmail.com', '8657576', '6');
+INSERT INTO `hotel_flores_system`.`persona` (`Nombres`, `Apellido_Paterno`, `Apellido_Materno`, `direccion`, `correo`, `numerodoc`, `idTipoDoc`) VALUES ('Oscar', 'Santisteban', 'Medina', 'Union 965', 'Oscar48837@gmail.com', '8768765', '1');
+
+/*Insercion de DATOS  --- Cliente  */
+
+INSERT INTO `hotel_flores_system`.`cliente` (`idPersona`, `nacionalidad`, `referencia`) VALUES ('1', 'Bolovia', 'La Paz');
+INSERT INTO `hotel_flores_system`.`cliente` (`idPersona`, `nacionalidad`, `referencia`) VALUES ('2', 'El Salvador', 'San Salvador');
+INSERT INTO `hotel_flores_system`.`cliente` (`idPersona`, `nacionalidad`, `referencia`) VALUES ('3', 'Peru', 'Huancayo');
+INSERT INTO `hotel_flores_system`.`cliente` (`idPersona`, `nacionalidad`, `referencia`) VALUES ('4', 'Guatemala', 'Guatemala');
+INSERT INTO `hotel_flores_system`.`cliente` (`idPersona`, `nacionalidad`, `referencia`) VALUES ('5', 'Peru', 'Lima');
+INSERT INTO `hotel_flores_system`.`cliente` (`idPersona`, `nacionalidad`, `referencia`) VALUES ('6', 'Peru', 'Lambayeque');
+INSERT INTO `hotel_flores_system`.`cliente` (`idPersona`, `nacionalidad`, `referencia`) VALUES ('7', 'Brasil', 'Brasilia');
+INSERT INTO `hotel_flores_system`.`cliente` (`idPersona`, `nacionalidad`, `referencia`) VALUES ('8', 'Mexico', 'Guadalajara');
+INSERT INTO `hotel_flores_system`.`cliente` (`idPersona`, `nacionalidad`, `referencia`) VALUES ('9', 'Guatemala', 'Guatemala');
+INSERT INTO `hotel_flores_system`.`cliente` (`idPersona`, `nacionalidad`, `referencia`) VALUES ('10', 'Peru', 'Cajamarca');
+
+/*Insercion de DATOS  --- TIPO DE HABITACION*/
+
+INSERT INTO `hotel_flores_system`.`tipohabitacion` (`Categoria`, `Descripcion`) VALUES ('A1', 'mejor categoria');
+INSERT INTO `hotel_flores_system`.`tipohabitacion` (`Categoria`, `Descripcion`) VALUES ('Familiar', 'para familia');
+INSERT INTO `hotel_flores_system`.`tipohabitacion` (`Categoria`, `Descripcion`) VALUES ('Matrimonial', 'para parejas');
+INSERT INTO `hotel_flores_system`.`tipohabitacion` (`Categoria`, `Descripcion`) VALUES ('Individual', 'para uno solo');
+
+/*Insercion de DATOS  --- HABITACION*/
+
+INSERT INTO `hotel_flores_system`.`habitacion` (`idTipoHabitacion`, `Numero`, `Piso`, `Precio`, `estado`) VALUES ('1', '101', '1', '50', '1');
+INSERT INTO `hotel_flores_system`.`habitacion` (`idTipoHabitacion`, `Numero`, `Piso`, `Precio`, `estado`) VALUES ('3', '207', '2', '20', '1');
+INSERT INTO `hotel_flores_system`.`habitacion` (`idTipoHabitacion`, `Numero`, `Piso`, `Precio`, `estado`) VALUES ('2', '300', '3', '40', '1');
+
+/*Insercion de DATOS  --- TIPO EMPLEADO*/
+
+INSERT INTO `hotel_flores_system`.`tipoempleado` (`Categoria`, `Descripcion`) VALUES ('Almacen', 'Almacen');
+INSERT INTO `hotel_flores_system`.`tipoempleado` (`Categoria`, `Descripcion`) VALUES ('Recepcion', 'Recepcion');
+
+/*Insercion de DATOS  --- EMPLEADO*/
+INSERT INTO `hotel_flores_system`.`Empleado` (`idTipoEmpleado`, `sueldo`) VALUES ('1', '1800');
+INSERT INTO `hotel_flores_system`.`Empleado` (`idTipoEmpleado`, `sueldo`) VALUES ('2', '2000');
+
+
+
+/*Insercion de DATOS  --- RESERVACION DE HABITACION*/
+
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-06-12', '2015-06-15', '8', '30', '1', '1', '1', '1');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '20', '1', '2', '2', '2');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '10', '1', '3', '1', '3');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '50', '1', '4', '2', '1');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '30', '1', '5', '1', '2');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '30', '1', '6', '2', '3');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '40', '1', '7', '1', '1');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '40', '1', '8', '2', '2');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '30', '1', '9', '1', '3');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '20', '1', '10', '2', '1');
+
+
+delimiter //
+create procedure IngresoProductos(
+    in _nombre varchar(30)
+  , in _precio decimal
+  , in _cantidad int
+  , in _vigencia date)
+  
+  begin
+       
+       insert into producto(NombreProducto,Precio,Cantidad,vigencia)values(_nombre,_precio,_cantidad,_vigencia);
+  end
+  
+//
+
+select * from Producto
