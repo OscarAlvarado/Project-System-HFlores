@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.2100000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select idproducto,NombreProducto,Precio,Cantidad,Vigencia
+ from producto]]>
+	</queryString>
+	<field name="idproducto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NombreProducto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Precio" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Vigencia" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="208" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="371" y="28" width="107" height="32" forecolor="#333333" backcolor="#99FFFF"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LISTADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="424" y="62" width="36" height="32" forecolor="#333333" backcolor="#99FFFF"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[DE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="413" y="94" width="133" height="32" forecolor="#333333" backcolor="#99FFFF" />
+				<textElement>
+					<font fontName="Comic Sans MS" size="20" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[PRODUCTOS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="190" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="371" y="148" width="175" height="1" forecolor="#FF3333" />
+			</line>
+			<line>
+				<reportElement x="350" y="15" width="1" height="111" forecolor="#FF3333"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="1" width="100" height="20"/>
+				<text><![CDATA[idproducto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="1" width="100" height="20"/>
+				<text><![CDATA[NombreProducto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="261" y="1" width="100" height="20" />
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="1" width="100" height="20"/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="498" y="1" width="100" height="20"/>
+				<text><![CDATA[Vigencia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="56" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" />
+			</frame>
+			<textField>
+				<reportElement x="0" y="18" width="100" height="20" />
+				<textFieldExpression><![CDATA[$F{idproducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="18" width="100" height="20" />
+				<textFieldExpression><![CDATA[$F{NombreProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="18" width="77" height="20" />
+				<textFieldExpression><![CDATA[$F{Precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="18" width="100" height="20" />
+				<textFieldExpression><![CDATA[$F{Cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="18" width="67" height="20" />
+				<textFieldExpression><![CDATA[$F{Vigencia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" />
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="15" width="553" height="1" />
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#99FFFF" />
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="276" y="0" width="40" height="20" forecolor="#333333" />
+					<textElement verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="196" y="0" width="80" height="20" forecolor="#333333" />
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Comic Sans MS" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

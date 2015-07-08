@@ -331,3 +331,16 @@ constraint FK_kardex_Producto foreign key (IdProducto) references Producto (IdPr
 
 
 insert into tipohabitacion values(default,'Normal','habitacion normal'),(default,'Doble','Habitacion Doble'),(default,'Matrimonial','Habitacion Matrimonial');
+
+
+
+INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('galletas oreo', '0.60', '50', '2016-12-12');
+INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('gaseosa Inka Cola', '1.50', '20', '2016-06-07');
+INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('kolino', '4.00', '30', '2015-07-04');
+INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('Papel Higienico SUAVE', '1.00', '40', '2017-04-04');
+INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('Liquido Limpieza', '3.00', '20', '2017-06-07');
+INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('cereales', '0.70', '30', '2016-08-09');
+INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('Pisco A1', '20.00', '15', '2019-12-29');
+INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('Desodorante Rexona', '1.00', '60', '2016-7-27');
+INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('Tijeras', '2.00', '20', '2017-12-12');
+INSERT INTO `hotel_flores_system`.`Producto` (`NombreProducto`, `Precio`, `Cantidad`, `Vigencia`) VALUES ('gaseosa Pepsi', '2.00', '20', '2016-06-07');
