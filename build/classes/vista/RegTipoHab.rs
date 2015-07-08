@@ -1,2 +1,2 @@
-GUIs.RegTipoHab
 GUIs.RegTipoHab$1
+GUIs.RegTipoHab

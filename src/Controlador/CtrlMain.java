@@ -11,6 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import vista.Main;
+import vista.Reg_TipoDocumento;
+import vista.Reg_TipoEmpleado;
+import vista.RegistroEmpleado;
 import vista.ScreenHabitaciones;
 import vista.VerticalLabelUI;
 
@@ -61,15 +64,36 @@ public class CtrlMain implements ActionListener{
         panelHab.add(btnRegHabitacion);
         panelHab.add(btnListHabitacion);
         
-        
         JPanel panelAlm = new JPanel();
-        
         JPanel panelRep = new JPanel();
         
+/*      Inicio para ajustes **********************************************************/
+        JPanel panelAjs = new JPanel();
+
+//boton para registrar tipo de empleados
+        JButton btn_regTipoEmp = new JButton("Registro de tipo de empleado");
+        btn_regTipoEmp.setActionCommand("btn_regTipoEmp");
+        btn_regTipoEmp.addActionListener(this);
+
+//boton para registrar tipos de documento
+        JButton btn_RegTipDoc = new JButton("Registrar tipos de documento");
+        btn_RegTipDoc.setActionCommand("btn_RegTipDoc");
+        btn_RegTipDoc.addActionListener(this);
+//boton para registrar empleados
+        JButton btn_RegEmp = new JButton("Registrar empleados");
+        btn_RegEmp.setActionCommand("btn_RegEmp");
+        btn_RegEmp.addActionListener(this);
+
+//Agregar los botones al panel
+        panelAjs.setLayout(new BoxLayout(panelAjs, BoxLayout.Y_AXIS));
+        panelAjs.add(btn_regTipoEmp);
+        panelAjs.add(btn_RegTipDoc);
+        panelAjs.add(btn_RegEmp);
         
         tabbedPane.addTab(null, panelHab);
         tabbedPane.addTab(null, panelAlm);
         tabbedPane.addTab(null, panelRep);
+        tabbedPane.addTab(null, panelAjs);//Para ajustes
         
         JLabel tabLabel1 = new JLabel("  Habitaciones  ");
         tabLabel1.setUI(new VerticalLabelUI(false));
@@ -79,17 +103,34 @@ public class CtrlMain implements ActionListener{
         tabbedPane.setTabComponentAt(1, tabLabel2);
         JLabel tabLabel3 = new JLabel("  Reportes  ");
         tabLabel3.setUI(new VerticalLabelUI(false));
-        tabbedPane.setTabComponentAt(2, tabLabel3);  
-          
+        tabbedPane.setTabComponentAt(2, tabLabel3);
+        
+        /* Para ajustes *******************************************************/
+        JLabel tabLabel4 = new JLabel("  Ajustes  ");
+        tabLabel4.setUI(new VerticalLabelUI(false));
+        tabbedPane.setTabComponentAt(3, tabLabel4);  
     }
    
     @Override
     public void actionPerformed(ActionEvent e) {
- 
         if(e.getActionCommand().equals("btnRegHab")){
-             
             CtrlRegistroHabitacion ctrlRegHab = new CtrlRegistroHabitacion(formMain.DskMain);
             ctrlRegHab.showForm();            
+        }
+        if(e.getActionCommand().equals("btn_regTipoEmp")){
+            Reg_TipoEmpleado formTE = new Reg_TipoEmpleado();
+            Ctrl_RegTipoEmpleado ctrlRTE = new Ctrl_RegTipoEmpleado(formTE,formMain.DskMain);
+            ctrlRTE.runner();
+        }
+        if(e.getActionCommand().equals("btn_RegEmp")){
+            RegistroEmpleado formRE = new RegistroEmpleado();
+            Ctrl_RegEmpleado ctrlRE = new Ctrl_RegEmpleado(formRE,formMain.DskMain);
+            ctrlRE.runner();
+        }
+        if(e.getActionCommand().equals("btn_RegTipDoc")){
+            Reg_TipoDocumento formTD = new Reg_TipoDocumento();
+            Ctrl_RegTipoDoc ctrlRTD = new Ctrl_RegTipoDoc(formTD,formMain.DskMain);
+            ctrlRTD.runner();
         }
     }
 }
