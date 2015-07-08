@@ -96,5 +96,4 @@ public class Persona {
     public void setIdTipoDoc(int idTipoDoc) {
         this.idTipoDoc = idTipoDoc;
     }
-    
 }
