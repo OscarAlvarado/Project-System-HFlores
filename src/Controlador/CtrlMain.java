@@ -1,6 +1,7 @@
 package Controlador;
 
 import Reporte.Reporte;
+import Reporte.Reporte_ClientesHospedaados;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -74,8 +75,10 @@ public class CtrlMain implements ActionListener{
         btnRepProd.addActionListener(this);
         
         JButton btnRepCli = new JButton("Clientes");
+        btnRepCli.setActionCommand("RepClientes");
+        btnRepCli.addActionListener(this);
         panelRep.setLayout(new BoxLayout(panelRep, BoxLayout.Y_AXIS));
-        
+      
         
         panelRep.add(btnRepProd);
         panelRep.add(btnRepCli);
@@ -148,6 +151,11 @@ public class CtrlMain implements ActionListener{
         if (e.getActionCommand().equalsIgnoreCase("RepProducto"))
          {
            Reporte reProd = new Reporte();
+           
+        }
+        if (e.getActionCommand().equalsIgnoreCase("RepClientes"))
+         {
+           Reporte_ClientesHospedaados reProd = new Reporte_ClientesHospedaados();
            
         }
     }
