@@ -31,7 +31,7 @@ public class Persona_DAO {
             cstm.setString(4, p.getDireccion());
             cstm.setString(5, p.getCorreo());
             cstm.setString(6, p.getNumerodoc());
-            cstm.setInt();
+            //cstm.setInt();
             respuesta=cstm.executeUpdate();
             return respuesta;
         }catch (Exception e){
