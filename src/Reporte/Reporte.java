@@ -40,7 +40,7 @@ public class Reporte
            //Ejecutar la consulta y llenar el reporte compilado
            JasperPrint jp=JasperFillManager.fillReport(jr, null, c);
            //MOstrar el reporte 
-           JasperViewer.viewReport(jp); 
+           JasperViewer.viewReport(jp,false); 
             //Exporta en PDF
             String destFileNamePdf=ruta+"\\reporte1.pdf";
             JasperExportManager.exportReportToPdfFile(jp, destFileNamePdf);
