@@ -59,7 +59,7 @@ public class Ctrl_RegTipoDoc implements ActionListener {
         }
         if(e.getActionCommand().equals("btn_guardar")){
             TipoDocumento td = new TipoDocumento();
-            td.setNombredoc(formRTD.txt_tipodoc.getText().toString());
+            td.setNombreDoc(formRTD.txt_tipodoc.getText().toString());
             tdl.regTiposDoc(td);
             formRTD.dispose();
         }

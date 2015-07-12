@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import vista.Main;
+import vista.RegCliente;
 import vista.Reg_TipoDocumento;
 import vista.Reg_TipoEmpleado;
 import vista.RegistroEmpleado;
@@ -106,12 +107,17 @@ public class CtrlMain implements ActionListener{
         JButton btn_RegEmp = new JButton("Registrar empleados");
         btn_RegEmp.setActionCommand("btn_RegEmp");
         btn_RegEmp.addActionListener(this);
+//boton para registrar Clientes
+        JButton btn_RegCli = new JButton("Registrar Clientes");
+        btn_RegCli.setActionCommand("btn_RegCli");
+        btn_RegCli.addActionListener(this);
 
 //Agregar los botones al panel
         panelAjs.setLayout(new BoxLayout(panelAjs, BoxLayout.Y_AXIS));
         panelAjs.add(btn_regTipoEmp);
         panelAjs.add(btn_RegTipDoc);
         panelAjs.add(btn_RegEmp);
+        panelAjs.add(btn_RegCli);
         
         tabbedPane.addTab(null, panelHab);
         tabbedPane.addTab(null, panelAlm);
@@ -149,6 +155,11 @@ public class CtrlMain implements ActionListener{
             RegistroEmpleado formRE = new RegistroEmpleado();
             Ctrl_RegEmpleado ctrlRE = new Ctrl_RegEmpleado(formRE,formMain.DskMain);
             ctrlRE.runner();
+        }
+        if(e.getActionCommand().equals("btn_RegCli")){
+            RegCliente formRC = new RegCliente();
+            PersonaControlador ctrlRC = new PersonaControlador(formRC,formMain.DskMain);
+            ctrlRC.runner();
         }
         if(e.getActionCommand().equals("btn_RegTipDoc")){
             Reg_TipoDocumento formTD = new Reg_TipoDocumento();

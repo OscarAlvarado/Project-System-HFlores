@@ -1,68 +1,76 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
 /**
  *
- * @author ChristianM
+ * @author Wuius
  */
 public class Persona {
-    private int idPersona;
-    private String Nombres;
-    private String Apellido_Paterno;
-    private String Apellido_Materno;
+
+    private Integer idPersona;
+    private TipoDocumento tipodocumento;
+    private String nombres;
+    private String apellidoPaterno;
+    private String apellidoMaterno;
     private String direccion;
     private String correo;
     private String numerodoc;
-    private int idTipoDoc;
+    private String telefono;
+    private Cliente cliente;
 
     public Persona() {
     }
 
-    public Persona(int idPersona, String Nombres, String Apellido_Paterno, String Apellido_Materno, String direccion, String correo, String numerodoc, int idTipoDoc) {
+    public Persona(Integer idPersona, TipoDocumento tipodocumento, String nombres, String apellidoPaterno, String apellidoMaterno, String direccion, String correo, String numerodoc, String telefono, Cliente cliente) {
         this.idPersona = idPersona;
-        this.Nombres = Nombres;
-        this.Apellido_Paterno = Apellido_Paterno;
-        this.Apellido_Materno = Apellido_Materno;
+        this.tipodocumento = tipodocumento;
+        this.nombres = nombres;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
         this.direccion = direccion;
         this.correo = correo;
         this.numerodoc = numerodoc;
-        this.idTipoDoc = idTipoDoc;
+        this.telefono = telefono;
+        this.cliente = cliente;
     }
 
-    public int getIdPersona() {
+    public Integer getIdPersona() {
         return idPersona;
     }
 
-    public void setIdPersona(int idPersona) {
+    public void setIdPersona(Integer idPersona) {
         this.idPersona = idPersona;
     }
 
+    public TipoDocumento getTipodocumento() {
+        return tipodocumento;
+    }
+
+    public void setTipodocumento(TipoDocumento tipodocumento) {
+        this.tipodocumento = tipodocumento;
+    }
+
     public String getNombres() {
-        return Nombres;
+        return nombres;
     }
 
-    public void setNombres(String Nombres) {
-        this.Nombres = Nombres;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
-    public String getApellido_Paterno() {
-        return Apellido_Paterno;
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
     }
 
-    public void setApellido_Paterno(String Apellido_Paterno) {
-        this.Apellido_Paterno = Apellido_Paterno;
+    public void setApellidoPaterno(String apellidoPaterno) {
+        this.apellidoPaterno = apellidoPaterno;
     }
 
-    public String getApellido_Materno() {
-        return Apellido_Materno;
+    public String getApellidoMaterno() {
+        return apellidoMaterno;
     }
 
-    public void setApellido_Materno(String Apellido_Materno) {
-        this.Apellido_Materno = Apellido_Materno;
+    public void setApellidoMaterno(String apellidoMaterno) {
+        this.apellidoMaterno = apellidoMaterno;
     }
 
     public String getDireccion() {
@@ -89,11 +97,20 @@ public class Persona {
         this.numerodoc = numerodoc;
     }
 
-    public int getIdTipoDoc() {
-        return idTipoDoc;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setIdTipoDoc(int idTipoDoc) {
-        this.idTipoDoc = idTipoDoc;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
 }

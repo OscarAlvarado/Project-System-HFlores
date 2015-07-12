@@ -1,52 +1,39 @@
-/*
- * Copyright (C) 2015 ChristianM
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package Modelo;
 
 /**
  *
- * @author ChristianM
+ * @author Wuius
  */
 public class TipoDocumento {
-    private int idTipoDocumento;
-    private String nombreDoc;
+   
+    private int IdTipoDocumento;
+    private String NombreDoc;
 
     public TipoDocumento() {
     }
 
-    public TipoDocumento(int IdTipoDocumento, String nombredoc) {
-        this.idTipoDocumento = IdTipoDocumento;
-        this.nombreDoc = nombredoc;
+    public TipoDocumento(int IdTipoDocumento, String NombreDoc) {
+        this.IdTipoDocumento = IdTipoDocumento;
+        this.NombreDoc = NombreDoc;
     }
 
     public int getIdTipoDocumento() {
-        return idTipoDocumento;
+        return IdTipoDocumento;
     }
 
     public void setIdTipoDocumento(int IdTipoDocumento) {
-        this.idTipoDocumento = IdTipoDocumento;
+        this.IdTipoDocumento = IdTipoDocumento;
     }
 
-    public String getNombredoc() {
-        return nombreDoc;
+    public String getNombreDoc() {
+        return NombreDoc;
     }
 
-    public void setNombredoc(String nombredoc) {
-        this.nombreDoc = nombredoc;
+    public void setNombreDoc(String NombreDoc) {
+        this.NombreDoc = NombreDoc;
     }
-    
-    
+    @Override
+     public String toString() {
+        return  NombreDoc ;
+    }
 }

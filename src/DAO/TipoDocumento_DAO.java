@@ -43,7 +43,7 @@ public class TipoDocumento_DAO {
             while (rs.next()) {
                 td = new TipoDocumento();
                 td.setIdTipoDocumento(rs.getInt(1));
-                td.setNombredoc(rs.getString(2));
+                td.setNombreDoc(rs.getString(2));
                 l.add(td);
             }
             return l;
@@ -75,7 +75,7 @@ public class TipoDocumento_DAO {
         try {
             con = Connection_db.getConnetion();
             cstm= con.prepareCall("{CALL sp_registraTipoDocumento(?)}");
-            cstm.setString(1, td.getNombredoc());
+            cstm.setString(1, td.getNombreDoc());
             respuesta=cstm.executeUpdate();
             return respuesta;
         }catch (Exception e){
