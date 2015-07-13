@@ -50,8 +50,6 @@ public class PersonaDAO {
                 per.setNumerodoc(rs.getString(8));
                 per.setTelefono(rs.getString(9));
                 per.setCliente(new Cliente(rs.getString("nacionalidad"), rs.getString("referencia")));
-
-                //no debes hacerlo asi asi estas chancando datos
                 r.add(per);
             }
             return r;

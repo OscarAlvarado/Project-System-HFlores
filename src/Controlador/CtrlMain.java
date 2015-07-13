@@ -14,7 +14,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import vista.Main;
 import vista.RegCliente;
-import vista.Reg_TipoDocumento;
+import vista.RegTipoDocumento;
 import vista.Reg_TipoEmpleado;
 import vista.RegistroEmpleado;
 import vista.ScreenHabitaciones;
@@ -162,8 +162,8 @@ public class CtrlMain implements ActionListener{
             ctrlRC.runner();
         }
         if(e.getActionCommand().equals("btn_RegTipDoc")){
-            Reg_TipoDocumento formTD = new Reg_TipoDocumento();
-            Ctrl_RegTipoDoc ctrlRTD = new Ctrl_RegTipoDoc(formTD,formMain.DskMain);
+            RegTipoDocumento formTD = new RegTipoDocumento();
+            TipoDocumentoControlador ctrlRTD = new TipoDocumentoControlador(formTD,formMain.DskMain);
             ctrlRTD.runner();
         }
          if(e.getActionCommand().equals("btnRegProd")){

@@ -43,11 +43,6 @@ public class PersonaControlador implements ActionListener, MouseListener, KeyLis
 
     }
     
-    public PersonaControlador() {
-        personaLogica = new PersonaLogica();
-        tipoDocLogica = new TipoDocLogica();
-        
-    } 
     public void Escuchadores() {
   
 
@@ -234,11 +229,7 @@ public class PersonaControlador implements ActionListener, MouseListener, KeyLis
 
                 formularioPersona.txtReferencia.setText(
                         formularioPersona.tblListaDeClientes.getValueAt(formularioPersona.tblListaDeClientes.getSelectedRow(), 10).toString());
-                
-                
-
-//                IdPersona = Integer.parseInt(
-//                        formularioPersona.tblListClientes.getValueAt(formularioPersona.tblListClientes.getSelectedRow(), 0).toString());
+  
             } else {
                 JOptionPane.showMessageDialog(formularioPersona, "Seleccione un cliente");
             }
