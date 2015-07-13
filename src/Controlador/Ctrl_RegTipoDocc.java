@@ -30,13 +30,13 @@ import vista.Reg_TipoDocumento;
  *
  * @author ChristianM
  */
-public class Ctrl_RegTipoDoc implements ActionListener {
+public class Ctrl_RegTipoDocc implements ActionListener {
     
     Reg_TipoDocumento formRTD = new Reg_TipoDocumento();
     JDesktopPane pan = null;
     TipoDocumento_Logica tdl;
 
-    public Ctrl_RegTipoDoc(Reg_TipoDocumento form, JDesktopPane panel) {
+    public Ctrl_RegTipoDocc(Reg_TipoDocumento form, JDesktopPane panel) {
         tdl = new TipoDocumento_Logica();
         this.pan = panel;
         this.formRTD = form;
