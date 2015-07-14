@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a0839b17-2eb4-482b-be93-0a578247a2c7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Anio" class="java.lang.String"/>
+	<parameter name="Mes" class="java.lang.String"/>
+	<parameter name="Dia" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call ListarDa ($P{Anio},$P{Mes},$P{Dia});]]>
+	</queryString>
+	<field name="serie" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FechaRegistro" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Monto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombres" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellido_Paterno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Apellido_Materno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numerodoc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="79" y="0" width="397" height="65" forecolor="#FF0000" uuid="e90df6e1-6c9f-49bd-9082-8b3676b67a98"/>
+				<textElement textAlignment="Center">
+					<font fontName="Comic Sans MS" size="36" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE POR DIA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="79" height="20" forecolor="#FF0000" uuid="f81e8a51-21de-4627-908d-77e3b50a1b41"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[SERIE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="0" width="79" height="20" forecolor="#FF0000" uuid="55e6e3e1-a138-4fcc-a439-5753fcdc0300"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="0" width="79" height="20" forecolor="#FF0000" uuid="cfe4ef82-109f-4f88-8be2-050920e84643"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="0" width="79" height="20" forecolor="#FF0000" uuid="593b2226-bb4b-4b75-afb3-54e12b22b5b8"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="0" width="95" height="20" forecolor="#FF0000" uuid="b098cf45-5392-4a2a-bc8e-24605a5a4c1f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Nº DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="474" y="0" width="79" height="20" forecolor="#FF0000" uuid="019d319b-2c26-439b-96d6-185e84540188"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[MONTO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="79" height="20" uuid="3984e2c1-7a72-488e-a380-5d216a33ddd2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{serie}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="0" width="79" height="20" uuid="5feb0130-b3d8-43c1-8c51-e2d189ca943f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{FechaRegistro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="0" width="79" height="20" uuid="8c549487-2553-487e-be00-c921a49d3a07"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Monto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="0" width="79" height="20" uuid="17b6849b-6030-467e-9b2f-a897877f2d9a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="0" width="79" height="20" uuid="41472a59-14c1-4d7e-9134-f21b2da3a844"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Apellido_Paterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="0" width="79" height="20" uuid="f6f0f90c-768c-4ecc-b381-1e21ccfb3ec4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Apellido_Materno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="0" width="79" height="20" uuid="7f7eb46b-7313-486f-b7b8-9c61cf5e24af"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{numerodoc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -16,6 +16,19 @@ public class Producto {
         this.vigencia = vigencia;
     }
     public Producto(){}
+    
+    public Producto(int idProd){
+     this.idproducto=idProd;
+    }
+    
+    public Producto(String nombreProducto, float precio, int cantidad, String vigencia) 
+    {
+        this.nombreProducto = nombreProducto;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.vigencia = vigencia;
+    }
+    
 
     public int getIdproducto() {
         return idproducto;
@@ -57,7 +70,9 @@ public class Producto {
         this.vigencia = vigencia;
     }
 
-
-    
-    
+    @Override
+    public String toString()
+    {
+        return this.nombreProducto;
+    }
 }

@@ -1,4 +1,5 @@
 
+
 drop database Hotel_Flores_System;
 
 create database Hotel_Flores_System;
@@ -91,7 +92,7 @@ constraint PK_idTipoDoc primary key (idTipoDoc)
 )engine=InnoDB;
 
 /*TABLA PERSONA*/
-
+/*ALERTA! CAMBIO*/
 create table Persona
 (
 idPersona int auto_increment not null,
@@ -100,7 +101,8 @@ Apellido_Paterno varchar (50) not null,
 Apellido_Materno varchar (50) not null,
 direccion character varying(80) not null,
 correo character varying(80) null,
-numerodoc varchar(80) not null,
+numerodoc varchar(80) not null, 
+telefono varchar (30) null, /*Se quito la tabla telefono y se le agrego como cambo de la tabla persona*/
 idTipoDoc int not null,
 constraint PK_idPersona primary key (idPersona),
 constraint FK_Persona foreign key (idTipoDoc) references tipoDocumento(idTipoDoc)
@@ -129,13 +131,13 @@ create table Habitacion
 (
 idHabitacion  int auto_increment NOT NULL,
 idTipoHabitacion int not null,
-Numero varchar (7) NOT NULL,
+Numero varchar (7) NOT NULL unique,
 Piso int not null check (Piso > 0),
-Precio decimal(10,2) NOT NULL check (Precio > 0),
-Baño char(2),
-Terma char(2),
+Precio decimal NOT NULL check (Precio > 0),
+Banio int,
+Terma int,
 Medidas varchar(20),
-TV char(2),
+TV int,
 estado smallint not null,
 constraint PK_idHabitacion primary key (idHabitacion),
 constraint FK_idTipo_Habitacion_Habitacion foreign key (idTipoHabitacion) references tipoHabitacion(idTipoHabitacion)
@@ -143,15 +145,6 @@ constraint FK_idTipo_Habitacion_Habitacion foreign key (idTipoHabitacion) refere
 
 /*TABLA NUMEROS TELEFONICOS*/
 
-create table Telefonos
-(
-  idNumeroTelf int auto_increment not null,
-  IdPersona int  not null,  
-  descripcion varchar (18) null default 'Datos Por Ingresar',   
-  constraint PK_idNumeroTelf primary key (idNumeroTelf),
-  constraint FK_persona_numerosTelefonicos foreign key (IdPersona) references Persona(IdPersona)
-  
-)engine=InnoDB;
 
 
 /*TABLA DE DETALLE ORDEN DE RECLAMO*/
@@ -412,16 +405,32 @@ INSERT INTO `hotel_flores_system`.`Empleado` (`idTipoEmpleado`, `sueldo`) VALUES
 
 /*Insercion de DATOS  --- RESERVACION DE HABITACION*/
 
-INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-06-12', '2015-06-15', '8', '30', '1', '1', '1', '1');
-INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '20', '1', '2', '2', '2');
-INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '10', '1', '3', '1', '3');
-INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '50', '1', '4', '2', '1');
-INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '30', '1', '5', '1', '2');
-INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '30', '1', '6', '2', '3');
-INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '40', '1', '7', '1', '1');
-INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '40', '1', '8', '2', '2');
-INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '30', '1', '9', '1', '3');
-INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-10-12', '2015-10-15', '8:00', '20', '1', '10', '2', '1');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2014-06-10', '2015-06-15', '8', '30', '1', '1', '1', '1');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2013-03-06', '2015-10-13', '8:00', '20', '1', '2', '2', '2');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2012-10-12', '2015-10-14', '8:00', '10', '1', '3', '1', '3');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2012-09-09', '2015-10-12', '8:00', '50', '1', '4', '2', '1');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-11-05', '2015-10-11', '8:00', '30', '1', '5', '1', '2');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2013-10-02', '2015-10-12', '8:00', '30', '1', '6', '2', '3');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2012-12-01', '2015-10-14', '8:00', '40', '1', '7', '1', '1');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2012-11-07', '2015-10-15', '8:00', '40', '1', '8', '2', '2');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2015-09-11', '2015-10-15', '8:00', '30', '1', '4', '1', '3');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2013-10-10', '2015-10-15', '8:00', '20', '1', '1', '2', '1');
+INSERT INTO `hotel_flores_system`.`ReservacionAquiler` (`FechaRegistro`, `FechadeSalida`, `Hora`, `Monto`, `estado`, `IdCliente`, `IdEmpleado`, `idHabitacion`) VALUES ('2014-12-11', '2014-10-12', '8:00', '30', '1', '2', '2', '3');
+
+
+
+/*Insercion de DATOS  --- DOCUMENTO DE ALQUILER*/
+INSERT INTO `hotel_flores_system`.`documentoAquiler` (`serie`, `numeroDocu`, `montoTotal`) VALUES ('377552776', '24553176', '30');
+INSERT INTO `hotel_flores_system`.`documentoAquiler` (`serie`, `numeroDocu`, `montoTotal`) VALUES ('242476', '345434', '20');
+INSERT INTO `hotel_flores_system`.`documentoAquiler` (`serie`, `numeroDocu`, `montoTotal`) VALUES ('3453453', '76567897', '10');
+INSERT INTO `hotel_flores_system`.`documentoAquiler` (`serie`, `numeroDocu`, `montoTotal`) VALUES ('45534453', '8768765', '10');
+INSERT INTO `hotel_flores_system`.`documentoAquiler` (`serie`, `numeroDocu`, `montoTotal`) VALUES ('345234552', '5647647', '70');
+
+INSERT INTO `hotel_flores_system`.`documentoAquiler` (`serie`, `numeroDocu`, `montoTotal`) VALUES ('3123123', '5647647', '50');
+INSERT INTO `hotel_flores_system`.`documentoAquiler` (`serie`, `numeroDocu`, `montoTotal`) VALUES ('3232423', '5647647', '40');
+INSERT INTO `hotel_flores_system`.`documentoAquiler` (`serie`, `numeroDocu`, `montoTotal`) VALUES ('2323243', '5647647', '20');
+INSERT INTO `hotel_flores_system`.`documentoAquiler` (`serie`, `numeroDocu`, `montoTotal`) VALUES ('2342323', '76402700', '18');
+INSERT INTO `hotel_flores_system`.`documentoAquiler` (`serie`, `numeroDocu`, `montoTotal`) VALUES ('1231321', '909123456', '50');
 
 
 delimiter //
@@ -438,4 +447,4 @@ create procedure IngresoProductos(
   
 //
 
-select * from Producto
+

@@ -84,12 +84,26 @@ public class CtrlMain implements ActionListener{
         
         JButton btnRepCli = new JButton("Clientes");
         btnRepCli.setActionCommand("RepClientes");
+        
+        JButton btnRepAnio=new JButton("Ingresos Año");//modifique yo max
+        btnRepAnio.setActionCommand("RepAnio");//modifique yo max
+        btnRepAnio.addActionListener(this);//modifique yo max
+        
+        JButton btnRepMes=new JButton("Ingresos Mes");//modifique yo max
+        btnRepMes.setActionCommand("RepMes");//modifique yo max
+        btnRepMes.addActionListener(this);//modifique yo max
+        
+        JButton btnRepDia=new JButton("Ingresos Dia");//modifique yo max
+        btnRepDia.setActionCommand("RepDia");//modifique yo max
+        btnRepDia.addActionListener(this);//modifique yo max
         btnRepCli.addActionListener(this);
         panelRep.setLayout(new BoxLayout(panelRep, BoxLayout.Y_AXIS));
       
-        
         panelRep.add(btnRepProd);
         panelRep.add(btnRepCli);
+        panelRep.add(btnRepAnio);
+        panelRep.add(btnRepMes);
+        panelRep.add(btnRepDia);
         
 /*      Inicio para ajustes **********************************************************/
         JPanel panelAjs = new JPanel();
@@ -180,6 +194,24 @@ public class CtrlMain implements ActionListener{
         if (e.getActionCommand().equalsIgnoreCase("RepClientes"))
          {
            Reporte_ClientesHospedaados reProd = new Reporte_ClientesHospedaados();
+           
+        }
+                 if (e.getActionCommand().equalsIgnoreCase("RepAnio"))//modifique yo max
+         {
+          CntrReporte_Anio cntrReport_Anio= new CntrReporte_Anio(formMain.DskMain);
+          cntrReport_Anio.showForm();
+           
+        }
+        if (e.getActionCommand().equalsIgnoreCase("RepMes"))//modifique yo max
+         {
+          CntrReporte_Mes cntrReport_Mes= new CntrReporte_Mes(formMain.DskMain);
+          cntrReport_Mes.showForm();
+           
+        }
+        if (e.getActionCommand().equalsIgnoreCase("RepDia"))//modifique yo max
+         {
+          CntrReporteDia cntrReport_Dia= new CntrReporteDia(formMain.DskMain);
+          cntrReport_Dia.showForm();
            
         }
     }

@@ -43,7 +43,7 @@ idTipoHab int,
 numhab varchar(7),
 piso char(2),
 precio decimal(10,2),
-baño char(2),
+Banio char(2),
 terma char(2),
 medidas varchar(20),
 tv char(2),
@@ -56,7 +56,7 @@ begin
 	elseif(precio<=0.0)then
 		set out_value_message = 0;
 	else
-		insert into habitacion values(default,idTipoHab,numhab,piso,precio,baño,terma,medidas,tv,est);
+		insert into habitacion values(default,idTipoHab,numhab,piso,precio,Banio,terma,medidas,tv,est);
         set out_value_message = 1;
 	end if;		
 end//
